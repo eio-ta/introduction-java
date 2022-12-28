@@ -1,0 +1,13 @@
+public class Trio{
+    Etudiant[] membres;
+    
+    Trio(Etudiant e1, Etudiant e2, Etudiant e3){
+	membres = new Etudiant[3];
+	membres[0] = e1;
+	membres[1] = e2;
+	membres[2] = e3;
+    }
+	
+	
+    
+}

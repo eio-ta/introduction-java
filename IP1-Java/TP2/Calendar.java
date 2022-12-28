@@ -1,0 +1,175 @@
+public class Calendar {
+    /* EXERCICE 3 */
+	// EXERCICE 3 QUESTION 1 
+	public static int diffCounter (int start, int end) {
+		// Modifier le code ci-dessous
+	    
+	    int diffCnt = end - start;
+	    return diffCnt;
+	}
+
+	// EXERCICE 3 QUESTION 2
+	public static int weekdayOfCounter(int date) {
+		// Modifier le code ci-dessous
+
+	    int weekday = date % 7;
+	    return weekday;
+	}
+    
+	/* EXERCICE 4 */
+	// EXERCICE 4 QUESTION 1
+	public static boolean isLeapYearJulian(int year) {
+		// Modifier le code ci-dessous
+
+	    int YearBi = year % 4;
+	    if (YearBi == 0) {
+		return true;
+	    }
+	    else {
+		return false;
+	    }
+	}
+
+	// EXERCICE 4 QUESTION 2
+	public static int daysInYearJulian(int year) {
+		// Modifier le code ci-dessous
+	    
+	           int YearJu = year % 4;
+	    if (YearJu == 0) {
+		return 366;
+	    }
+	    else {
+		return 365;
+	    }
+	}
+
+	/* EXERCICE 5 */
+	public static int daysInMonth(int month, boolean inLeapYear) {
+		// Modifier le code ci-dessous
+
+	    int c = month - 0;
+	    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+		return 31;
+	    }
+	    if (month == 4 || month == 6 || month == 9 || month == 11) {
+		return 30;
+	    }
+		else {
+		    if (inLeapYear == true) {
+			return 29;
+		    }
+		    else {
+			return 28;
+		    }
+		}
+	}
+
+
+
+    
+	/*EXERCICE 6*/
+    public static int JulianToCounter(int year, int month, int day) {
+
+	int a = 0;
+	for (int i=1; i<year; i = i + 1) {
+	    a = daysInYearJulian(year); }
+
+	int b = 0;
+	for (int j=1; j<month; j = j + 1) {
+	    b = month - 0;}
+
+	int c = day - 2;
+	return (a + b + c); }
+	
+    
+
+
+	/*EXERCICE 7*/
+	// A completer
+
+	/*EXERCICE 9*/
+	//A completer
+
+	/*EXERCICE 10*/
+	//A completer
+
+    
+
+	public static void main (String[] args) {
+
+		// ENLEVEZ LES COMMENTAIRES AU FUR ET A MESURE POUR TESTER VOS FONCTIONS
+		System.out.println("====Ex3Q1====");
+		testInt("diffCounter(582,584)", diffCounter(582,584), 2);
+
+		System.out.println("====Ex3Q2====");
+		testInt("weekdayOfCounter(1)", weekdayOfCounter(1), 1);
+		testInt("weekdayOfCounter(7)", weekdayOfCounter(7), 0);
+		testInt("weekdayOfCounter(11)", weekdayOfCounter(11), 4);
+
+		 System.out.println("====Ex4Q1====");
+		 testBoolean("isLeapYearJulian(1900)", isLeapYearJulian(1900), true);
+		 testBoolean("isLeapYearJulian(1901)", isLeapYearJulian(1901), false);
+		 testBoolean("isLeapYearJulian(2000)", isLeapYearJulian(2000), true);
+
+		 System.out.println("====Ex4Q2====");
+		 testInt("daysInYearJulian(1900)", daysInYearJulian(1900), 366);
+		 testInt("daysInYearJulian(2000)", daysInYearJulian(2000), 366);
+
+		 System.out.println("====Ex5====");
+		 testInt("daysInMonth(1,false)", daysInMonth(1,false), 31);
+		 testInt("daysInMonth(2,false)", daysInMonth(2,false), 28);
+		 testInt("daysInMonth(2,true)", daysInMonth(2,true), 29);
+		 testInt("daysInMonth(11,true)", daysInMonth(11,true), 30);
+		
+		 System.out.println("====Ex6====");
+		 testInt("julianToCounter(1,1,1)", julianToCounter(1,1,1), -1);
+		 testInt("julianToCounter(2,2,2)", julianToCounter(2,2,2), 396);
+		 testInt("julianToCounter(101,1,1)", julianToCounter(101,1,1), 36524);
+		 testInt("julianToCounter(2016,9,14)", julianToCounter(2016,9,14), 736234);
+		
+		// System.out.println("====Ex7Q1====");
+		// testBoolean("isLeapYearGregorian(1900)", isLeapYearGregorian(1900), false);
+		// testBoolean("isLeapYearGregorian(1901)", isLeapYearGregorian(1901), false);
+		// testBoolean(      "isLeapYearGregorian(2000)", isLeapYearGregorian(2000), true);
+
+		// System.out.println("====Ex7Q2====");
+		// testInt("daysInYearGregorian(1900)", daysInYearGregorian(1900), 365);
+		// testInt("daysInYearGregorian(2000)", daysInYearGregorian(2000), 366);
+
+		
+		// System.out.println("====Ex8====");
+		// testInt("gregorianToCounter(1,1,1)", gregorianToCounter(1,1,1), 1);
+		// testInt("gregorianToCounter(2,2,2)", gregorianToCounter(2,2,2), 398);
+		// testInt("gregorianToCounter(101,1,1)", gregorianToCounter(101,1,1), 36525);
+		// testInt("gregorianToCounter(2016,9,14)", gregorianToCounter(2016,9,14), 736221);
+
+		
+
+		// System.out.println("====Ex9Q1====");
+		// testInt("weekdayOfGregorian(2016,9,14)", weekdayOfGregorian(2016,9,14), 3);
+		// System.out.println("====Ex9Q2====");
+		// Ecrire le test
+
+		// System.out.println("====Ex9Q3====");
+		// testInt("dayOfSummertime(2017)", dayOfSummertime(2017), 26);\
+	}
+
+
+	/*************************************************************/
+	/* NE PAS MODIFIER */
+	/*************************************************************/
+	public static void testInt(String cmd, int exp, int val) {
+		System.out.println(cmd + " == " + exp);
+		if (exp != val) {
+            System.out.println("Ce n'est pas la bonne réponse!");
+		}
+	}
+
+	public static void testBoolean(String cmd, boolean exp, boolean val) {
+		System.out.println(cmd + " == " + exp);
+		if (exp != val) {
+            System.out.println("Ce n'est pas la bonne réponse!");
+		}
+	}
+
+}

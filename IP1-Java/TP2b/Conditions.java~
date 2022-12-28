@@ -1,0 +1,20 @@
+public class Conditions {
+
+    public static int absolute (int x) {
+	if (x>0) {
+	    return (x);
+	}
+	else {
+	    return (-x);
+	}
+
+    public static void main(String[] args) {
+	System.out.println (absolute (73));
+    }
+    }
+}
+
+        /* Écrivez vos tests et le code à exécuter ici */
+
+    }
+}

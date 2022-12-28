@@ -1,0 +1,30 @@
+public class NombresAmicaux {
+
+    /* Écrivez vos fonctions ici */
+    public static int sumDiv (int n) {
+	int cpt = 0;
+	
+	for (int i = 1; i <= n; i = i + 1){ //trouver tous les diviseurs, goooo !
+	    
+	    for (int j=1;j<=n;j = j + 1){ //si c'est multiplié alors c'est un diviseur !
+		
+		if (i * j == n){
+		    
+		    System.out.println(i); // Affiche tous les diviseurs.
+		    
+		    cpt = cpt + 1;
+		}
+		
+	    }
+	}
+	retrun cpt;
+    }
+    
+    
+    public static void main(String[] args) {
+	System.out.println (sumDiv (6));
+	
+        /* Écrivez vos tests ici */
+	
+    }
+}
